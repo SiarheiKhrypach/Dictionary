@@ -13,7 +13,9 @@ public class DictionaryProcessorEngRusWithQuizImpl implements DictionaryProcesso
         return map;
     }
 
-    public DictionaryProcessorEngRusWithQuizImpl(Map map)
+    public DictionaryProcessorEngRusWithQuizImpl(Map map) {
+        this.map = map;
+    }
 
     @Override
     public void addNewWord(String entry, String translation) {
@@ -77,7 +79,5 @@ public class DictionaryProcessorEngRusWithQuizImpl implements DictionaryProcesso
         int randomNumber = (int) (Math.random() * map.size());
         return (String) map.keySet().toArray()[randomNumber];
     }
-
-
 
 }
