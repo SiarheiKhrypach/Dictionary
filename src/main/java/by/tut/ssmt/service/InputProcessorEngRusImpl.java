@@ -2,7 +2,7 @@ package by.tut.ssmt.service;
 
 import by.tut.ssmt.exceptions.LanguageException;
 
-public class EngRusInputProcessor implements InputProcessor {
+public class InputProcessorEngRusImpl implements InputProcessor {
 
 
     public void validateEntryScript(String entry) throws LanguageException {

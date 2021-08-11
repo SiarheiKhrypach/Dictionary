@@ -8,8 +8,8 @@ import java.util.HashMap;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class EngRusDictionaryProcessorWithQuizTest extends TestCase {
-    private EngRusDictionaryProcessorWithQuiz engRusDictionaryProcessorWithQuiz;
+public class DictionaryProcessorEngRusWithQuizImplTest extends TestCase {
+    private DictionaryProcessorEngRusWithQuizImpl dictionaryProcessorEngRusWithQuizImpl;
 
     @Before
     public void setUp() {
@@ -21,13 +21,13 @@ public class EngRusDictionaryProcessorWithQuizTest extends TestCase {
             put("moon", "луна");
         }};
 
-        engRusDictionaryProcessorWithQuiz = new EngRusDictionaryProcessorWithQuiz(testEngRusDictionary);
+        dictionaryProcessorEngRusWithQuizImpl = new DictionaryProcessorEngRusWithQuizImpl(testEngRusDictionary);
 
     }
 
     public void testAddNewWord() {
-        assertThat(engRusDictionaryProcessorWithQuiz.getMap().size(), is(3));
-        engRusDictionaryProcessorWithQuiz.addNewWord("spoon", "ложка");
-        assertThat(engRusDictionaryProcessorWithQuiz.getMap().size(), is(4));
+        assertThat(dictionaryProcessorEngRusWithQuizImpl.getMap().size(), is(3));
+        dictionaryProcessorEngRusWithQuizImpl.addNewWord("spoon", "ложка");
+        assertThat(dictionaryProcessorEngRusWithQuizImpl.getMap().size(), is(4));
     }
 }
