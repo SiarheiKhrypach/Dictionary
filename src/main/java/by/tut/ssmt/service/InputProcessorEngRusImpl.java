@@ -4,7 +4,10 @@ import by.tut.ssmt.exceptions.LanguageException;
 
 public class InputProcessorEngRusImpl implements InputProcessor {
 
+    public InputProcessorEngRusImpl() {
+    }
 
+    @Override
     public void validateEntryScript(String entry) throws LanguageException {
         if (entry == null || !entry.matches("^[a-zA-Z]+$")) {
             throw new LanguageException("Language Exception: incorrect input - only latin symbols are allowed");
@@ -12,6 +15,7 @@ public class InputProcessorEngRusImpl implements InputProcessor {
 
     }
 
+    @Override
     public void validateTranslationScript(String entry) throws LanguageException {
         if (entry == null || !entry.matches("^[а-яА-ЯёЁ]+$")) {
             throw new LanguageException("Language Exception: incorrect input - only cyrillic symbols are allowed");

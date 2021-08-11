@@ -9,22 +9,23 @@ public class DictionaryProcessorEngRusWithQuizImpl implements DictionaryProcesso
     private final Map<String, String> map;
     private final Scanner scanner = new Scanner(System.in);
 
-    public DictionaryProcessorEngRusWithQuizImpl(Map map) {
-        this.map = map;
-    }
-
     public Map<String, String> getMap() {
         return map;
     }
 
+    public DictionaryProcessorEngRusWithQuizImpl(Map map)
+
+    @Override
     public void addNewWord(String entry, String translation) {
         map.put(entry, translation);
     }
 
+    @Override
     public String translate(String entry) {
         return map.get(entry) == null ? "not found" : map.get(entry);
     }
 
+    @Override
     public String reverseTranslate(String entry) {
         String searchResult = "not found";
         for (Map.Entry<String, String> ent : map.entrySet()) {
@@ -35,10 +36,12 @@ public class DictionaryProcessorEngRusWithQuizImpl implements DictionaryProcesso
         return searchResult;
     }
 
+    @Override
     public String countEntries() {
         return String.valueOf(map.size());
     }
 
+    @Override
     public String showAll() {
         return map.toString();
     }
@@ -74,5 +77,7 @@ public class DictionaryProcessorEngRusWithQuizImpl implements DictionaryProcesso
         int randomNumber = (int) (Math.random() * map.size());
         return (String) map.keySet().toArray()[randomNumber];
     }
+
+
 
 }
