@@ -1,5 +1,7 @@
 package by.tut.ssmt.service;
 
+import by.tut.ssmt.exceptions.LanguageException;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
