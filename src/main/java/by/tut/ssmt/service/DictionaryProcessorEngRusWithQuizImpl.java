@@ -1,7 +1,6 @@
 package by.tut.ssmt.service;
 
-import by.tut.ssmt.exceptions.LanguageException;
-
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -31,13 +30,11 @@ public class DictionaryProcessorEngRusWithQuizImpl implements DictionaryProcesso
 
     @Override
     public String reverseTranslate(String entry) {
-        String searchResult = "not found";
-        for (Map.Entry<String, String> ent : map.entrySet()) {
-            if (ent.getValue().equals(entry)) {
-                searchResult = ent.getKey();
-            }
-        }
-        return searchResult;
+        ArrayList listAnswers = prepareArrayListToFill();
+        fillArrayList(entry, listAnswers);
+        prepareArrayListToPrint(listAnswers);
+        String reverseTranslation = String.join(", ", listAnswers);
+        return reverseTranslation;
     }
 
     @Override
@@ -80,6 +77,26 @@ public class DictionaryProcessorEngRusWithQuizImpl implements DictionaryProcesso
     private String getRandomMapKey(Map<String, String> map) {
         int randomNumber = (int) (Math.random() * map.size());
         return (String) map.keySet().toArray()[randomNumber];
+    }
+
+    private void fillArrayList(String entry, ArrayList listAnswers) {
+        for (Map.Entry<String, String> ent : map.entrySet()) {
+            if (ent.getValue().equals(entry)) {
+                listAnswers.add(ent.getKey());
+            }
+        }
+    }
+
+    private void prepareArrayListToPrint(ArrayList listAnswers) {
+        if (listAnswers.size()>1) {
+            listAnswers.remove("not found");
+        }
+    }
+
+    private ArrayList prepareArrayListToFill() {
+        ArrayList listAnswers = new ArrayList();
+        listAnswers.add("not found");
+        return listAnswers;
     }
 
 }

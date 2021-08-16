@@ -4,8 +4,9 @@ import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.HashMap;
+
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
 
 public class DictionaryProcessorEngRusWithQuizImplTest extends TestCase {
     private DictionaryProcessorEngRusWithQuizImpl dictionaryProcessorEngRusWithQuizImpl;
