@@ -22,4 +22,6 @@ public class InputProcessorEngRusImplTest extends TestCase {
                 inputProcessorEngRusImpl.validateTranslationScript("sdgsdg23423"));
         assertEquals("Language Exception: incorrect input - only cyrillic symbols are allowed", exception.getMessage());
     }
+
+
 }
