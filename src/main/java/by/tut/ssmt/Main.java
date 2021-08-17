@@ -13,8 +13,5 @@ public class Main {
         final InputProcessor engRusInputProcessor = new InputProcessorEngRusImpl();
         final DictionaryConsoleApplication app = new DictionaryConsoleApplication(engRusDictionaryProcessor, engRusInputProcessor);
         app.start();
-
-
-
     }
 }
