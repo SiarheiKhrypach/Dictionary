@@ -8,7 +8,7 @@ import java.util.HashMap;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-public class DictionaryProcessorEngRusWithQuizImplTest extends TestCase {
+public class DictionaryProcessorEngRusWithQuizImplTest {
     private DictionaryProcessorEngRusWithQuizImpl dictionaryProcessorEngRusWithQuizImpl;
 
     @Before
