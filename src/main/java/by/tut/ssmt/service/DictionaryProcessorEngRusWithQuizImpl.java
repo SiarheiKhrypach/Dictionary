@@ -5,12 +5,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class DictionaryProcessorEngRusWithQuizImpl implements DictionaryProcessor {
+public final class DictionaryProcessorEngRusWithQuizImpl implements DictionaryProcessor {
 
     private final Map<String, String> map;
     private final Scanner scanner = new Scanner(System.in);
 
-    public Map<String, String> getMap() {
+    public final Map<String, String> getMap() {
         return map;
     }
 

@@ -2,7 +2,7 @@ package by.tut.ssmt.dictionaries;
 
 import java.util.HashMap;
 
-public class EngRus {
+public final class EngRus {
 
     private final HashMap<String, String> EngRusDictionaryStartKit = new HashMap <String, String> () {{
         put("tree", "дерево");

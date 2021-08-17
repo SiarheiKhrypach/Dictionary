@@ -2,7 +2,7 @@ package by.tut.ssmt.service;
 
 import by.tut.ssmt.exceptions.LanguageException;
 
-public class InputProcessorEngRusImpl implements InputProcessor {
+public final class InputProcessorEngRusImpl implements InputProcessor {
 
     public InputProcessorEngRusImpl() {
     }

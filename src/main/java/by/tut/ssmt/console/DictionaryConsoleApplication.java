@@ -7,7 +7,7 @@ import by.tut.ssmt.service.InputProcessor;
 import java.io.Closeable;
 import java.util.Scanner;
 
-public class DictionaryConsoleApplication {
+public final class DictionaryConsoleApplication {
 
     public static final String WELCOME_MESSAGE = "Press:\n 0 - Exit" +
             "\n 1 - Add new word" +
