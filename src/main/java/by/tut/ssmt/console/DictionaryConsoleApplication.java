@@ -34,12 +34,12 @@ public final class DictionaryConsoleApplication {
         this.closeables = new Closeable[]{scanner};
     }
 
-    public void start() throws LanguageException {
+    public void start() {
         processMenu();
         cleanUpCloseables();
     }
 
-    private void processMenu() throws LanguageException {
+    private void processMenu()  {
         boolean isRunning = true;
         while (isRunning) {
             printConsole(WELCOME_MESSAGE);
@@ -93,17 +93,19 @@ public final class DictionaryConsoleApplication {
             inputProcessor.validateEntryScript(entry);
         } catch (LanguageException e) {
             printException(e.getMessage());
+        } finally {
+            printConsole("Enter the translation");
+            String translation = scanner.next();
+            try {
+                inputProcessor.validateTranslationScript(translation);
+            } catch (LanguageException e) {
+                printException(e.getMessage());
+            } finally {
+            dictionaryProcessor.addNewWord(entry, translation);
+            printConsole("Your word and translation got recorded");
+            pressEnterToContinue();
         }
-        printConsole("Enter the translation");
-        String translation = scanner.next();
-        try {
-            inputProcessor.validateTranslationScript(translation);
-        } catch (LanguageException e) {
-            printException(e.getMessage());
         }
-        dictionaryProcessor.addNewWord(entry, translation);
-        printConsole("Your word and translation got recorded");
-        pressEnterToContinue();
     }
 
     private void translateEnRu() {
@@ -114,8 +116,9 @@ public final class DictionaryConsoleApplication {
             printConsole(dictionaryProcessor.translate(entry));
         } catch (LanguageException e) {
             printException(e.getMessage());
+        } finally {
+            pressEnterToContinue();
         }
-        pressEnterToContinue();
     }
 
     private void translateRuEn() {
@@ -126,8 +129,9 @@ public final class DictionaryConsoleApplication {
             printConsole(dictionaryProcessor.reverseTranslate(entry));
         } catch (LanguageException e) {
             printException(e.getMessage());
+        } finally {
+            pressEnterToContinue();
         }
-        pressEnterToContinue();
     }
 
     private void listSize() {
